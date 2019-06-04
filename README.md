@@ -5,5 +5,4 @@ This plugin will allow you to receive a notification on your proxy machine when 
 ## Installation
 
 1. Download the [latest release](https://github.com/chinleung/sw-exporter-run-notifier/releases/latest/).
-2. Unzip the package.
-3. Move the **run-notifier.asar** into the plugins folder of SWEX.
+2. Move the **run-notifier.asar** into the plugins folder of SWEX.
