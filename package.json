@@ -1,0 +1,13 @@
+{
+  "name": "sw-exporter-run-notifier",
+  "version": "1.0.0",
+  "description": "A run notification plugin for SWEX.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chin Leung",
+  "license": "MIT"
+}
