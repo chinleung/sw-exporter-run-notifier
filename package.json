@@ -1,6 +1,6 @@
 {
   "name": "sw-exporter-run-notifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A run notification plugin for SWEX.",
   "main": "index.js",
   "dependencies": {},

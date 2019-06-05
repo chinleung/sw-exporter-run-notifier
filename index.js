@@ -21,12 +21,12 @@ module.exports = {
     init (proxy, config) {
         const pluginConfig = config.Config.Plugins[this.pluginName];
 
-        if (! pluginConfig.enabled) {
-            return;
-        }
-
         this.events(pluginConfig).forEach(event => {
             proxy.on(event, (request, response) => {
+                if (! pluginConfig.enabled) {
+                    return;
+                }
+
                 const notification = new Notification({
                     title: 'Summoners War',
                     body: 'The run has finished.',
