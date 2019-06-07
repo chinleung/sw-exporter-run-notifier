@@ -17,32 +17,33 @@ module.exports = {
         toa: { label: 'Trial of Ascension' },
     },
     pluginName: 'RunNotifier',
-    pluginDescription: 'Receive a notification when run has finished.',
+    pluginDescription: 'Receive a notification when a run has finished.',
     init (proxy, config) {
         const pluginConfig = config.Config.Plugins[this.pluginName];
 
-        this.events(pluginConfig).forEach(event => {
-            proxy.on(event, (request, response) => {
-                if (! pluginConfig.enabled) {
-                    return;
-                }
+        Object.entries(this.events())
+            .forEach(([mode, event]) => {
+                proxy.on(event, (request, response) => {
+                    if (! pluginConfig.enabled || ! pluginConfig[mode]) {
+                        return;
+                    }
 
-                const notification = new Notification({
-                    title: 'Summoners War',
-                    body: 'The run has finished.',
+                    const notification = new Notification({
+                        title: 'Summoners War',
+                        body: 'The run has finished.',
+                    });
+
+                    notification.show();
                 });
-
-                notification.show();
             });
-        });
     },
-    events (config) {
-        return [
-            config.cairos ? 'BattleDungeonResult' : null,
-            config.scenario ? 'BattleScenarioResult' : null,
-            config.raid ? 'BattleRiftOfWorldsRaidResult' : null,
-            config.rift ? 'BattleRiftDungeonResult' : null,
-            config.toa ? 'BattleTrialTowerResult_v2' : null,
-        ].filter(element => element != null);
+    events () {
+        return {
+            'cairos': 'BattleDungeonResult',
+            'scenario': 'BattleScenarioResult',
+            'raid': 'BattleRiftOfWorldsRaidResult',
+            'rift': 'BattleRiftDungeonResult',
+            'toa': 'BattleTrialTowerResult_v2',
+        };
     },
 };
