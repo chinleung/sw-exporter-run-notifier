@@ -8,6 +8,7 @@ module.exports = {
         raid: true,
         rift: true,
         toa: true,
+        dimension: true,
     },
     defaultConfigDetails: {
         cairos: { label: 'Cairos Dungeon' },
@@ -15,6 +16,7 @@ module.exports = {
         raid: { label: 'Rift of World' },
         rift: { label: 'Elemental Beasts' },
         toa: { label: 'Trial of Ascension' },
+        dimension: { label: 'Dimension Hole' },
     },
     pluginName: 'RunNotifier',
     pluginDescription: 'Receive a notification when a run has finished.',
@@ -44,6 +46,7 @@ module.exports = {
             'raid': 'BattleRiftOfWorldsRaidResult',
             'rift': 'BattleRiftDungeonResult',
             'toa': 'BattleTrialTowerResult_v2',
+            'dimension': 'BattleDimensionHoleDungeonResult',
         };
     },
 };
