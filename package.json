@@ -2,12 +2,26 @@
     "name": "sw-exporter-run-notifier",
     "version": "1.0.2",
     "description": "A run notification plugin for SWEX.",
+    "keywords": [
+        "SWEX", "Summoners War", "Run Notifier"
+    ],
     "main": "index.js",
     "dependencies": {},
     "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "author": {
+        "name": "Chin Leung",
+        "email": "chinleung94@gmail.com",
+        "url": "https://chinleung.com"
     },
-    "author": "Chin Leung",
-    "license": "MIT"
+    "contributors": [],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chinleung/sw-exporter-run-notifier"
+    },
+    "bugs": {
+        "email": "chinleung94@gmail.com",
+        "issues": "https://github.com/chinleung/sw-exporter-run-notifier/issues"
+    },
+    "homepage": "https://github.com/chinleung/sw-exporter-run-notifier"
 }
