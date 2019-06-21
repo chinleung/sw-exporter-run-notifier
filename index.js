@@ -1,4 +1,5 @@
 const { Notification } = require('electron');
+const versionChecker = require('sw-exporter-plugin-version-checker');
 
 module.exports = {
     defaultConfig: {
@@ -22,6 +23,14 @@ module.exports = {
     pluginDescription: 'Receive a notification when a run has finished.',
     init (proxy, config) {
         const pluginConfig = config.Config.Plugins[this.pluginName];
+
+        if (pluginConfig.enabled) {
+            versionChecker.proceed({
+                name: this.pluginName,
+                config: require('./package.json'),
+                proxy: proxy
+            });
+        }
 
         Object.entries(this.events())
             .forEach(([mode, event]) => {

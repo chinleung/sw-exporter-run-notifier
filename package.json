@@ -3,10 +3,14 @@
     "version": "1.0.2",
     "description": "A run notification plugin for SWEX.",
     "keywords": [
-        "SWEX", "Summoners War", "Run Notifier"
+        "SWEX",
+        "Summoners War",
+        "Run Notifier"
     ],
     "main": "index.js",
-    "dependencies": {},
+    "dependencies": {
+        "sw-exporter-plugin-version-checker": "github:chinleung/sw-exporter-plugin-version-checker"
+    },
     "devDependencies": {},
     "author": {
         "name": "Chin Leung",
