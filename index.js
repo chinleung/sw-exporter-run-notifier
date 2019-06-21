@@ -32,7 +32,9 @@ module.exports = {
 
                     const notification = new Notification({
                         title: 'Summoners War',
-                        body: 'The run has finished.',
+                        body: response.win_lose == 1
+                            ? 'The run has finished.'
+                            : 'The run has failed.',
                     });
 
                     notification.show();
